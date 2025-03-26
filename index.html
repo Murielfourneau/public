@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Managérial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .options {
+            margin-top: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result {
+            display: none;
+            margin-top: 20px;
+            background-color: #e9f5e9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quiz Managérial</h1>
+
+    <div id="quiz">
+        <div class="question" id="q1">
+            <h3>1. Quelle est votre approche face à un défi ?</h3>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Vous planifiez soigneusement.</label><br>
+                <label><input type="radio" name="q1" value="b"> Vous préférez agir rapidement.</label><br>
+                <label><input type="radio" name="q1" value="c"> Vous attendez de voir comment ça se passe.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q2">
+            <h3>2. Que faites-vous quand un collègue propose une idée ?</h3>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Vous écoutez attentivement et lui donnez des retours.</label><br>
+                <label><input type="radio" name="q2" value="b"> Vous décidez si c'est faisable ou non.</label><br>
+                <label><input type="radio" name="q2" value="c"> Vous ignorez et continuez votre propre travail.</label>
+            </div>
+        </div>
+
+        <div class="question" id="q3">
+            <h3>3. Comment réagissez-vous lors d'une réunion tendue ?</h3>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Vous restez calme et diplomate.</label><br>
+                <label><input type="radio" name="q3" value="b"> Vous défendez fermement votre point de vue.</label><br>
+                <label><input type="radio" name="q3" value="c"> Vous vous retirez et évitez le conflit.</label>
+            </div>
+        </div>
+
+        <button onclick="submitQuiz()">Valider le Quiz</button>
+    </div>
+
+    <div id="result">
+        <h2>Bravo !</h2>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            var score = 0;
+            var totalQuestions = 3;
+
+            // Vérification des réponses
+            var q1 = document.querySelector('input[name="q1"]:checked');
+            var q2 = document.querySelector('input[name="q2"]:checked');
+            var q3 = document.querySelector('input[name="q3"]:checked');
+
+            if (q1 && q2 && q3) {
+                if (q1.value === "a") score++;
+                if (q2.value === "a") score++;
+                if (q3.value === "a") score++;
+
+                // Affichage du résultat
+                document.getElementById("quiz").style.display = "none";
+                var message = "Votre score est " + score + " sur " + totalQuestions + ". ";
+
+                if (score === totalQuestions) {
+                    message += "Bravo, vous avez un excellent profil managérial !";
+                } else {
+                    message += "Continuez à améliorer vos compétences managériales.";
+                }
+
+                document.getElementById("message").textContent = message;
+                document.getElementById("result").style.display = "block";
+            } else {
+                alert("Veuillez répondre à toutes les questions.");
+            }
+        }
+    </script>
+
+</body>
+</html>
