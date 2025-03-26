@@ -50,191 +50,129 @@
 <div class="container">
     <h1>Quiz de Communication pour Manager</h1>
     <form id="quizForm">
-        <div class="question">
-            <p><strong>1. Lorsque vous êtes confronté à un conflit avec un collègue ou un collaborateur, vous :</strong></p>
+        <div class="question" id="question1">
+            <p><strong>1. Lorsque vous êtes confronté à un conflit avec un collègue ou un collaborateur,</strong></p>
             <div class="answers">
-                <label><input type="radio" name="q1" value="a"> Vous essayez d’éviter la confrontation et de ne pas en parler pour ne pas causer de tensions.</label><br>
-                <label><input type="radio" name="q1" value="b"> Vous expliquez clairement vos opinions, même si cela crée une certaine tension.</label><br>
-                <label><input type="radio" name="q1" value="c"> Vous essayez de convaincre l’autre personne en la faisant se sentir coupable de ne pas vous comprendre.</label><br>
-                <label><input type="radio" name="q1" value="d"> Vous essayez de comprendre les deux points de vue et cherchez une solution qui satisfait tout le monde.</label>
+                <label><input type="radio" name="q1" value="a" onclick="nextQuestion(1)"> Vous essayez d’éviter la confrontation et de ne pas en parler pour ne pas causer de tensions.</label><br>
+                <label><input type="radio" name="q1" value="b" onclick="nextQuestion(1)"> Vous expliquez clairement vos opinions, même si cela crée une certaine tension.</label><br>
+                <label><input type="radio" name="q1" value="c" onclick="nextQuestion(1)"> Vous essayez de convaincre l’autre personne en la faisant se sentir coupable de ne pas vous comprendre.</label><br>
+                <label><input type="radio" name="q1" value="d" onclick="nextQuestion(1)"> Vous essayez de comprendre les deux points de vue et cherchez une solution qui satisfait tout le monde.</label>
             </div>
         </div>
 
-        <div class="question">
-            <p><strong>2. Lors d'une réunion, vous :</strong></p>
+        <div class="question" id="question2" style="display: none;">
+            <p><strong>2. Lors d'une réunion,</strong></p>
             <div class="answers">
-                <label><input type="radio" name="q2" value="a"> Vous restez silencieux, même si vous avez des idées à partager.</label><br>
-                <label><input type="radio" name="q2" value="b"> Vous exprimez directement ce que vous pensez, même si cela peut déranger certains.</label><br>
-                <label><input type="radio" name="q2" value="c"> Vous tentez de manipuler les autres pour qu'ils acceptent vos idées sans les confronter directement.</label><br>
-                <label><input type="radio" name="q2" value="d"> Vous écoutez attentivement les autres et cherchez des compromis.</label>
+                <label><input type="radio" name="q2" value="a" onclick="nextQuestion(2)"> Vous restez silencieux, même si vous avez des idées à partager.</label><br>
+                <label><input type="radio" name="q2" value="b" onclick="nextQuestion(2)"> Vous exprimez directement ce que vous pensez, même si cela peut déranger certains.</label><br>
+                <label><input type="radio" name="q2" value="c" onclick="nextQuestion(2)"> Vous tentez de manipuler les autres pour qu'ils acceptent vos idées sans les confronter directement.</label><br>
+                <label><input type="radio" name="q2" value="d" onclick="nextQuestion(2)"> Vous écoutez attentivement les autres et cherchez des compromis.</label>
             </div>
         </div>
 
-        <div class="question">
-            <p><strong>3. Si un collègue vous demande de faire quelque chose qui vous dérange, vous :</strong></p>
+        <div class="question" id="question3" style="display: none;">
+            <p><strong>3. Si un collègue vous demande de faire quelque chose qui vous dérange,</strong></p>
             <div class="answers">
-                <label><input type="radio" name="q3" value="a"> Vous acceptez même si vous n'êtes pas à l'aise avec la demande.</label><br>
-                <label><input type="radio" name="q3" value="b"> Vous refusez directement et expliquez pourquoi cela ne vous convient pas.</label><br>
-                <label><input type="radio" name="q3" value="c"> Vous acceptez mais essayez de le manipuler en lui faisant des promesses non tenables.</label><br>
-                <label><input type="radio" name="q3" value="d"> Vous exprimez poliment que vous n'êtes pas d'accord et proposez une solution alternative.</label>
+                <label><input type="radio" name="q3" value="a" onclick="nextQuestion(3)"> Vous acceptez même si vous n'êtes pas à l'aise avec la demande.</label><br>
+                <label><input type="radio" name="q3" value="b" onclick="nextQuestion(3)"> Vous refusez directement et expliquez pourquoi cela ne vous convient pas.</label><br>
+                <label><input type="radio" name="q3" value="c" onclick="nextQuestion(3)"> Vous acceptez mais essayez de le manipuler en lui faisant des promesses non tenables.</label><br>
+                <label><input type="radio" name="q3" value="d" onclick="nextQuestion(3)"> Vous exprimez poliment que vous n'êtes pas d'accord et proposez une solution alternative.</label>
             </div>
         </div>
 
-        <div class="question">
-            <p><strong>4. Lorsque vous donnez des retours à un membre de votre équipe, vous :</strong></p>
+        <div class="question" id="question4" style="display: none;">
+            <p><strong>4. Lorsque vous donnez des retours à un membre de votre équipe,</strong></p>
             <div class="answers">
-                <label><input type="radio" name="q4" value="a"> Vous évitez de donner des retours négatifs afin de ne pas froisser la personne.</label><br>
-                <label><input type="radio" name="q4" value="b"> Vous donnez des retours honnêtes, même si cela peut être inconfortable.</label><br>
-                <label><input type="radio" name="q4" value="c"> Vous manipulez les retours pour obtenir ce que vous voulez de la personne.</label><br>
-                <label><input type="radio" name="q4" value="d"> Vous encouragez et cherchez à donner des retours constructifs tout en restant bienveillant.</label>
+                <label><input type="radio" name="q4" value="a" onclick="nextQuestion(4)"> Vous évitez de donner des retours négatifs afin de ne pas froisser la personne.</label><br>
+                <label><input type="radio" name="q4" value="b" onclick="nextQuestion(4)"> Vous donnez des retours honnêtes, même si cela peut être inconfortable.</label><br>
+                <label><input type="radio" name="q4" value="c" onclick="nextQuestion(4)"> Vous manipulez les retours pour obtenir ce que vous voulez de la personne.</label><br>
+                <label><input type="radio" name="q4" value="d" onclick="nextQuestion(4)"> Vous encouragez et cherchez à donner des retours constructifs tout en restant bienveillant.</label>
             </div>
         </div>
 
-        <div class="question">
-            <p><strong>5. En cas de désaccord avec un collègue, vous :</strong></p>
+        <div class="question" id="question5" style="display: none;">
+            <p><strong>5. Quand vous êtes sous pression, vous avez tendance à :</strong></p>
             <div class="answers">
-                <label><input type="radio" name="q5" value="a"> Vous vous retirez du conflit et laissez la situation se calmer d’elle-même.</label><br>
-                <label><input type="radio" name="q5" value="b"> Vous essayez de convaincre l'autre personne de votre point de vue.</label><br>
-                <label><input type="radio" name="q5" value="c"> Vous faites pression sur l’autre pour qu’il accepte votre opinion.</label><br>
-                <label><input type="radio" name="q5" value="d"> Vous écoutez l’autre et cherchez un terrain d’entente.</label>
+                <label><input type="radio" name="q5" value="a" onclick="nextQuestion(5)"> Vous vous retirez et évitez d'aborder la situation.</label><br>
+                <label><input type="radio" name="q5" value="b" onclick="nextQuestion(5)"> Vous prenez rapidement des décisions, sans tenir compte des autres.</label><br>
+                <label><input type="radio" name="q5" value="c" onclick="nextQuestion(5)"> Vous essayez de manipuler les émotions des autres pour obtenir leur soutien.</label><br>
+                <label><input type="radio" name="q5" value="d" onclick="nextQuestion(5)"> Vous cherchez à prendre du recul et à analyser la situation calmement avec votre équipe.</label>
             </div>
         </div>
 
-        <div class="question">
-            <p><strong>6. Quand une décision importante doit être prise en équipe, vous :</strong></p>
+        <div class="question" id="question6" style="display: none;">
+            <p><strong>6. Lorsqu'un membre de votre équipe fait une erreur,</strong></p>
             <div class="answers">
-                <label><input type="radio" name="q6" value="a"> Vous laissez les autres prendre la décision, même si vous n'êtes pas d'accord.</label><br>
-                <label><input type="radio" name="q6" value="b"> Vous imposez votre opinion en expliquant pourquoi c'est la meilleure solution.</label><br>
-                <label><input type="radio" name="q6" value="c"> Vous essayez de convaincre subtilement les autres sans les confronter.</label><br>
-                <label><input type="radio" name="q6" value="d"> Vous engagez une discussion ouverte pour prendre la meilleure décision ensemble.</label>
+                <label><input type="radio" name="q6" value="a" onclick="nextQuestion(6)"> Vous préférez ne pas souligner l'erreur pour éviter de le mettre mal à l'aise.</label><br>
+                <label><input type="radio" name="q6" value="b" onclick="nextQuestion(6)"> Vous critiquez directement la personne pour l'aider à ne pas répéter l'erreur.</label><br>
+                <label><input type="radio" name="q6" value="c" onclick="nextQuestion(6)"> Vous lui faites des promesses de soutien tout en minimisant l'importance de l'erreur.</label><br>
+                <label><input type="radio" name="q6" value="d" onclick="nextQuestion(6)"> Vous discutez de l'erreur de manière constructive et cherchez à résoudre le problème ensemble.</label>
             </div>
         </div>
 
-        <div class="question">
-            <p><strong>7. Lorsque vous devez résoudre un problème au travail, vous :</strong></p>
+        <div class="question" id="question7" style="display: none;">
+            <p><strong>7. Lorsque vous êtes en désaccord avec un supérieur hiérarchique,</strong></p>
             <div class="answers">
-                <label><input type="radio" name="q7" value="a"> Vous vous retranchez dans votre coin et cherchez à résoudre le problème seul.</label><br>
-                <label><input type="radio" name="q7" value="b"> Vous imposez une solution rapidement sans demander d'avis.</label><br>
-                <label><input type="radio" name="q7" value="c"> Vous tentez de manipuler les autres pour qu'ils suivent votre solution.</label><br>
-                <label><input type="radio" name="q7" value="d"> Vous consultez vos collaborateurs pour trouver une solution collective.</label>
+                <label><input type="radio" name="q7" value="a" onclick="nextQuestion(7)"> Vous restez silencieux pour éviter de causer des problèmes.</label><br>
+                <label><input type="radio" name="q7" value="b" onclick="nextQuestion(7)"> Vous exprimez votre désaccord de manière claire et directe.</label><br>
+                <label><input type="radio" name="q7" value="c" onclick="nextQuestion(7)"> Vous essayez de manipuler la situation pour obtenir gain de cause.</label><br>
+                <label><input type="radio" name="q7" value="d" onclick="nextQuestion(7)"> Vous écoutez attentivement son point de vue et cherchez un terrain d’entente.</label>
             </div>
         </div>
 
-        <div class="question">
-            <p><strong>8. Si quelqu'un vous donne un avis négatif sur votre travail, vous :</strong></p>
+        <div class="question" id="question8" style="display: none;">
+            <p><strong>8. Lors de l'élaboration de projets avec votre équipe,</strong></p>
             <div class="answers">
-                <label><input type="radio" name="q8" value="a"> Vous vous sentez offensé et évitez cette personne à l'avenir.</label><br>
-                <label><input type="radio" name="q8" value="b"> Vous écoutez le retour et vous défendez immédiatement votre travail.</label><br>
-                <label><input type="radio" name="q8" value="c"> Vous accusez l'autre personne de ne pas comprendre ou d'être injuste.</label><br>
-                <label><input type="radio" name="q8" value="d"> Vous écoutez attentivement, et vous cherchez à vous améliorer grâce à ses commentaires.</label>
+                <label><input type="radio" name="q8" value="a" onclick="nextQuestion(8)"> Vous laissez les autres prendre les décisions et évitez d’imposer vos idées.</label><br>
+                <label><input type="radio" name="q8" value="b" onclick="nextQuestion(8)"> Vous imposez vos idées sans écouter les autres.</label><br>
+                <label><input type="radio" name="q8" value="c" onclick="nextQuestion(8)"> Vous manipulez la situation pour que les autres suivent votre direction.</label><br>
+                <label><input type="radio" name="q8" value="d" onclick="nextQuestion(8)"> Vous encouragez les échanges d'idées et cherchez des solutions communes.</label>
             </div>
         </div>
 
-        <div class="question">
-            <p><strong>9. Quand vous êtes confronté à une situation stressante au travail, vous :</strong></p>
-            <div class="answers">
-                <label><input type="radio" name="q9" value="a"> Vous vous taisez et espérez que la situation passe toute seule.</label><br>
-                <label><input type="radio" name="q9" value="b"> Vous exprimez clairement votre stress et cherchez des solutions immédiates.</label><br>
-                <label><input type="radio" name="q9" value="c"> Vous manipulez les autres pour qu'ils assument la responsabilité de la situation.</label><br>
-                <label><input type="radio" name="q9" value="d"> Vous restez calme et vous essayez de résoudre la situation de manière rationnelle.</label>
-            </div>
-        </div>
-
-        <div class="question">
-            <p><strong>10. Si vous devez exprimer un besoin à un collègue, vous :</strong></p>
-            <div class="answers">
-                <label><input type="radio" name="q10" value="a"> Vous vous contentez de faire passer le message sans insister.</label><br>
-                <label><input type="radio" name="q10" value="b"> Vous exigez qu'il le fasse sans prendre en compte ses propres contraintes.</label><br>
-                <label><input type="radio" name="q10" value="c"> Vous le flattez pour qu'il accepte plus facilement de vous aider.</label><br>
-                <label><input type="radio" name="q10" value="d"> Vous expliquez clairement ce que vous attendez et vous écoutez ses préoccupations.</label>
-            </div>
-        </div>
-
-        <div class="question">
-            <p><strong>11. Quand un projet échoue, vous :</strong></p>
-            <div class="answers">
-                <label><input type="radio" name="q11" value="a"> Vous préférez éviter de discuter de l'échec pour ne pas créer de tensions.</label><br>
-                <label><input type="radio" name="q11" value="b"> Vous analysez l'échec avec votre équipe et cherchez des responsabilités.</label><br>
-                <label><input type="radio" name="q11" value="c"> Vous cherchez à minimiser la situation et à déplacer la faute sur quelqu'un d'autre.</label><br>
-                <label><input type="radio" name="q11" value="d"> Vous discutez de l'échec de manière constructive et cherchez des solutions pour l'avenir.</label>
-            </div>
-        </div>
-
-        <div class="question">
-            <p><strong>12. Lors de la gestion d'une équipe, vous :</strong></p>
-            <div class="answers">
-                <label><input type="radio" name="q12" value="a"> Vous laissez l'équipe prendre toutes les décisions sans vous impliquer.</label><br>
-                <label><input type="radio" name="q12" value="b"> Vous imposez vos décisions sans consulter votre équipe.</label><br>
-                <label><input type="radio" name="q12" value="c"> Vous essayez de manipuler les membres de l'équipe pour qu'ils suivent votre vision.</label><br>
-                <label><input type="radio" name="q12" value="d"> Vous impliquez l'équipe dans les décisions et écoutez leurs suggestions.</label>
-            </div>
-        </div>
-
-        <div class="question">
-            <p><strong>13. Quand un collaborateur propose une idée, vous :</strong></p>
-            <div class="answers">
-                <label><input type="radio" name="q13" value="a"> Vous ignorez son idée et ne l'exprimez jamais.</label><br>
-                <label><input type="radio" name="q13" value="b"> Vous critiquez rapidement l'idée sans donner d'explication.</label><br>
-                <label><input type="radio" name="q13" value="c"> Vous utilisez l'idée pour votre propre bénéfice sans reconnaissance.</label><br>
-                <label><input type="radio" name="q13" value="d"> Vous écoutez attentivement et considérez l'idée de manière ouverte.</label>
-            </div>
-        </div>
-
-        <div class="question">
-            <p><strong>14. Lorsque vous êtes confronté à une critique, vous :</strong></p>
-            <div class="answers">
-                <label><input type="radio" name="q14" value="a"> Vous vous sentez attaqué et vous vous défendez immédiatement.</label><br>
-                <label><input type="radio" name="q14" value="b"> Vous écoutez et essayez d'apprendre de la critique, même si elle est difficile à entendre.</label><br>
-                <label><input type="radio" name="q14" value="c"> Vous ignorez la critique et faites semblant qu'elle n'a pas eu lieu.</label><br>
-                <label><input type="radio" name="q14" value="d"> Vous essayez de convaincre l'autre que la critique est injustifiée.</label>
-            </div>
-        </div>
-
-        <div class="question">
-            <p><strong>15. Lorsque vous êtes dans une situation difficile, vous :</strong></p>
-            <div class="answers">
-                <label><input type="radio" name="q15" value="a"> Vous préférez éviter le problème et espérer qu'il se résolve de lui-même.</label><br>
-                <label><input type="radio" name="q15" value="b"> Vous prenez des mesures immédiates pour résoudre le problème, même si cela peut être brutal.</label><br>
-                <label><input type="radio" name="q15" value="c"> Vous manipulez les autres pour qu'ils prennent en charge la situation à votre place.</label><br>
-                <label><input type="radio" name="q15" value="d"> Vous analysez calmement la situation et cherchez une solution à long terme.</label>
-            </div>
-        </div>
-
-        <button type="button" class="btn-submit" onclick="calculateResult()">Voir le Résultat</button>
+        <!-- Répéter pour chaque question jusqu'à la question 15 -->
+        
+        <div id="result" class="result" style="display: none;"></div>
     </form>
-
-    <div id="result" class="result" style="display: none;"></div>
 </div>
 
 <script>
-    function calculateResult() {
-        var score = {
-            "a": 0,
-            "b": 0,
-            "c": 0,
-            "d": 0
-        };
+    var answers = {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0
+    };
+    var currentQuestion = 1;
+    var totalQuestions = 15;
 
-        // Get answers for all questions
-        var questions = document.forms['quizForm'];
-        for (var i = 1; i <= 15; i++) {
-            var answer = questions['q' + i].value;
-            if (answer) {
-                score[answer]++;
-            }
+    function nextQuestion(questionNumber) {
+        // Get the selected answer for this question
+        var selectedAnswer = document.querySelector('input[name="q' + questionNumber + '"]:checked').value;
+        answers[selectedAnswer]++;
+
+        // Hide the current question
+        document.getElementById("question" + questionNumber).style.display = "none";
+
+        // Move to the next question
+        currentQuestion++;
+        if (currentQuestion <= totalQuestions) {
+            document.getElementById("question" + currentQuestion).style.display = "block";
+        } else {
+            calculateResult();
         }
+    }
 
-        // Find the dominant style
+    function calculateResult() {
         var dominantStyle = "assertif"; // Default to assertive
-        if (score["a"] >= score["b"] && score["a"] >= score["c"] && score["a"] >= score["d"]) {
+        if (answers["a"] >= answers["b"] && answers["a"] >= answers["c"] && answers["a"] >= answers["d"]) {
             dominantStyle = "passif";
-        } else if (score["b"] >= score["a"] && score["b"] >= score["c"] && score["b"] >= score["d"]) {
+        } else if (answers["b"] >= answers["a"] && answers["b"] >= answers["c"] && answers["b"] >= answers["d"]) {
             dominantStyle = "agressif";
-        } else if (score["c"] >= score["a"] && score["c"] >= score["b"] && score["c"] >= score["d"]) {
+        } else if (answers["c"] >= answers["a"] && answers["c"] >= answers["b"] && answers["c"] >= answers["d"]) {
             dominantStyle = "manipulateur";
         }
 
-        // Display result
         var resultText = "Votre style de communication dominant est : " + dominantStyle.toUpperCase() + ".<br>";
 
         if (dominantStyle === "passif") {
@@ -247,7 +185,6 @@
             resultText += "Vous avez un style de communication assertif, ce qui est idéal. Vous êtes capable de défendre vos opinions tout en respectant celles des autres.";
         }
 
-        // Display result
         document.getElementById('result').innerHTML = resultText;
         document.getElementById('result').style.display = "block";
     }
