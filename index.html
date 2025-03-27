@@ -205,13 +205,13 @@
             // Calcul du profil basé sur les réponses
             let profile = '';
             if (score.A > score.B && score.A > score.C && score.A > score.D) {
-                profile = 'Vous avez un style de communication passif. Vous préférez éviter les conflits et maintenir l’harmonie à tout prix.';
+                profile = 'Vous avez un style de communication majoritairement passif. Vous préférez éviter les conflits et maintenir l’harmonie à tout prix.';
             } else if (score.B > score.A && score.B > score.C && score.B > score.D) {
-                profile = 'Vous avez un style de communication agressif. Vous avez tendance à exprimer vos désaccords de manière directe et parfois dure.';
+                profile = 'Vous avez un style de communication majoritairement agressif. Vous avez tendance à exprimer vos désaccords de manière directe et parfois dure.';
             } else if (score.C > score.A && score.C > score.B && score.C > score.D) {
-                profile = 'Vous avez un style de communication manipulateur. Vous utilisez des stratégies subtiles pour obtenir ce que vous voulez.';
+                profile = 'Vous avez un style de communication majoritairement manipulateur. Vous utilisez des stratégies subtiles pour obtenir ce que vous voulez.';
             } else {
-                profile = 'Vous avez un style de communication assertif. Vous vous exprimez clairement et respectueusement tout en écoutant les autres.';
+                profile = 'Vous avez un style de communication majoritairement assertif. Vous vous exprimez clairement et respectueusement tout en écoutant les autres.';
             }
 
             resultDiv.textContent = profile;
