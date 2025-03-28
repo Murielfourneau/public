@@ -41,12 +41,6 @@
             margin-bottom: 25px;
             padding: 15px;
             border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .question:hover {
-            background-color: #f2f2f2;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .question p {
@@ -59,7 +53,6 @@
             padding-left: 20px;
             display: flex;
             align-items: center;
-            transition: background-color 0.3s ease;
         }
 
         .answers li:hover {
@@ -72,18 +65,18 @@
             height: 20px;
         }
 
-        /* Couleur bleue sur la coche sélectionnée */
+        /* Coche bleue uniquement */
         input[type="radio"]:checked {
-            accent-color: #4CAF50; /* Utilisation de la couleur bleu-vert lorsque sélectionné */
+            accent-color: #76b6d9; /* Coche bleue */
         }
 
-        /* Effet de halo gris clair au survol de la case à cocher */
+        /* Halo de survol gris clair */
         .answers input[type="radio"]:hover {
             border: 2px solid #ccc;
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #76b6d9;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -96,7 +89,7 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #64a6c4;
         }
 
         #result {
@@ -231,54 +224,41 @@
                 </ul>
             </div>
 
-            <button type="button" onclick="calculateResult()">Obtenir les résultats</button>
+            <button type="submit">Voir la Synthèse</button>
         </form>
 
+        <!-- Résultat affiché après soumission -->
         <div id="result"></div>
     </div>
 
     <script>
-        function calculateResult() {
-            var totalScore = 0;
+        document.getElementById("quiz-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
 
-            // Calculer les points en fonction des réponses sélectionnées
-            for (var i = 1; i <= 10; i++) {
-                var answer = document.querySelector(`input[name="q${i}"]:checked`);
+            let resultText = "Voici votre analyse de style de communication :\n\n";
+            let score = 0;
+            
+            // Récupérer les réponses
+            const answers = document.querySelectorAll('input[type="radio"]:checked');
+            answers.forEach(answer => {
                 if (answer) {
-                    switch (answer.value) {
-                        case "A":
-                            totalScore += 1;
-                            break;
-                        case "B":
-                            totalScore += 2;
-                            break;
-                        case "C":
-                            totalScore += 3;
-                            break;
-                        case "D":
-                            totalScore += 4;
-                            break;
-                    }
+                    score += 1; // chaque réponse sélectionnée donne 1 point
                 }
-            }
+            });
 
-            // Générer la synthèse finale
-            var resultText = "";
-            if (totalScore <= 20) {
-                resultText = "Vous avez une communication majoritairement agressive. Essayez de modérer vos réactions et d'exprimer vos idées de manière plus calme.";
-            } else if (totalScore <= 30) {
-                resultText = "Votre communication est parfois agressive. Vous pourriez améliorer l'écoute et la patience pour une meilleure compréhension.";
-            } else if (totalScore <= 40) {
-                resultText = "Votre communication est équilibrée, mais vous avez encore quelques moments où vous pourriez être plus assertif.";
+            if (score <= 10) {
+                resultText += "Vous avez une communication principalement agressive.";
+            } else if (score <= 20) {
+                resultText += "Vous avez une communication souvent passive.";
             } else {
-                resultText = "Votre communication est assertive et constructive. Vous avez un excellent contrôle sur vos échanges et vous savez écouter.";
+                resultText += "Vous avez une communication plutôt assertive.";
             }
 
             // Afficher le résultat
-            var resultDiv = document.getElementById('result');
+            const resultDiv = document.getElementById("result");
             resultDiv.textContent = resultText;
-            resultDiv.style.display = 'block';
-        }
+            resultDiv.style.display = "block";
+        });
     </script>
 </body>
 </html>
