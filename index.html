@@ -7,67 +7,69 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.5;
-            margin: 0;
-            padding: 20px;
             background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
+        .quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 60%;
+        }
+
         h1 {
             text-align: center;
+            color: #333;
         }
-        .quiz-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+
         .question {
             margin-bottom: 20px;
         }
+
         .question p {
             font-weight: bold;
         }
-        .answers {
-            list-style-type: none;
-            padding-left: 0;
-        }
+
         .answers li {
             margin: 10px 0;
-            background-color: #fafafa;
-            border-radius: 4px;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
-        .answers li:hover {
-            background-color: #e0e0e0;
+
+        .answers input {
+            margin-right: 10px;
         }
-        .result {
-            display: none;
-            margin-top: 20px;
-            font-size: 18px;
-            text-align: center;
-            background-color: #84c6e9;
-            padding: 20px;
-            border-radius: 8px;
+
+        button {
+            background-color: #4CAF50;
             color: white;
-        }
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            font-size: 18px;
+            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
         }
-        .submit-btn:hover {
-            background-color: #0056b3;
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #76b6d9;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -84,50 +86,123 @@
                     <li><label><input type="radio" name="q1" value="D"> Vous l’interpellez calmement pour lui demander de laisser les autres s'exprimer aussi.</label></li>
                 </ul>
             </div>
-            
+
             <div class="question">
-                <p>2. Un de vos subordonnés fait une erreur. Comment réagissez-vous ?</p>
+                <p>3. Un de vos subordonnés fait une erreur. Comment réagissez-vous ?</p>
                 <ul class="answers">
-                    <li><label><input type="radio" name="q2" value="A"> Vous lui faites savoir clairement qu’il a fait une erreur et que c’est inacceptable.</label></li>
-                    <li><label><input type="radio" name="q2" value="B"> Vous ne dites rien pour ne pas le gêner, et vous réparez l'erreur discrètement.</label></li>
-                    <li><label><input type="radio" name="q2" value="C"> Vous lui suggérez gentiment qu'il aurait pu éviter l'erreur, sans lui dire directement.</label></li>
-                    <li><label><input type="radio" name="q2" value="D"> Vous lui expliquez l’erreur de manière constructive et cherchez à l’aider à éviter de la répéter.</label></li>
+                    <li><label><input type="radio" name="q3" value="A"> Vous lui faites savoir clairement qu’il a fait une erreur et que c’est inacceptable.</label></li>
+                    <li><label><input type="radio" name="q3" value="B"> Vous ne dites rien pour ne pas le gêner, et vous réparez l'erreur discrètement.</label></li>
+                    <li><label><input type="radio" name="q3" value="C"> Vous lui suggérez gentiment qu'il aurait pu éviter l'erreur, sans lui dire directement.</label></li>
+                    <li><label><input type="radio" name="q3" value="D"> Vous lui expliquez l’erreur de manière constructive et cherchez à l’aider à éviter de la répéter.</label></li>
                 </ul>
             </div>
-            
-            <button type="button" class="submit-btn" onclick="calculateResult()">Soumettre</button>
+
+            <div class="question">
+                <p>4. Un projet que vous avez proposé est rejeté par votre équipe. Que faites-vous ?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="q4" value="A"> Vous vous sentez mal mais tentez de convaincre les autres de revenir sur leur décision.</label></li>
+                    <li><label><input type="radio" name="q4" value="B"> Vous ne dites rien et laissez tomber l’idée.</label></li>
+                    <li><label><input type="radio" name="q4" value="C"> Vous vous fâchez et faites savoir que vous êtes déçu(e).</label></li>
+                    <li><label><input type="radio" name="q4" value="D"> Vous demandez des retours constructifs pour comprendre les raisons et adapter votre projet.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>5. Lorsqu’un collègue fait une remarque sur votre travail :</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="q5" value="A"> Vous écoutez sans répondre, même si vous n’êtes pas d’accord.</label></li>
+                    <li><label><input type="radio" name="q5" value="B"> Vous défendez immédiatement votre travail en argumentant de manière ferme.</label></li>
+                    <li><label><input type="radio" name="q5" value="C"> Vous faites semblant de comprendre et d’être d’accord, même si vous êtes contrariés.</label></li>
+                    <li><label><input type="radio" name="q5" value="D"> Vous écoutez attentivement, demandez des précisions et cherchez à vous améliorer.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>6. Votre supérieur vous confie une tâche que vous ne pouvez pas accomplir dans les délais :</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="q6" value="A"> Vous lui dites fermement que c'est impossible et que vous avez d'autres priorités.</label></li>
+                    <li><label><input type="radio" name="q6" value="B"> Vous tentez de négocier, espérant que votre supérieur comprenne sans avoir à le dire directement.</label></li>
+                    <li><label><input type="radio" name="q6" value="C"> Vous essayez de la faire quand même, même si cela vous stresse.</label></li>
+                    <li><label><input type="radio" name="q6" value="D"> Vous expliquez clairement les contraintes de temps et proposez un plan pour ajuster les délais ou déléguer.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>7. Un collaborateur prend le crédit pour un travail que vous avez fait. Comment réagissez-vous ?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="q7" value="A"> Vous lui en parlez calmement pour clarifier la situation, en vous assurant que votre contribution soit reconnue.</label></li>
+                    <li><label><input type="radio" name="q7" value="B"> Vous ne dites rien, même si vous êtes contrarié.</label></li>
+                    <li><label><input type="radio" name="q7" value="C"> Vous lui dites de manière directe que c’est vous qui avez fait le travail et que c’est injuste.</label></li>
+                    <li><label><input type="radio" name="q7" value="D"> Vous faites savoir à l’équipe que vous êtes déçu(e) de cette situation.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>8. Un collègue vous fait une critique sur un projet :</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="q8" value="A"> Vous réagissez émotionnellement et faites comprendre que la critique vous affecte.</label></li>
+                    <li><label><input type="radio" name="q8" value="B"> Vous répondez en expliquant pourquoi vous avez fait ce choix, parfois de manière défensive.</label></li>
+                    <li><label><input type="radio" name="q8" value="C"> Vous remerciez pour la critique, demandez des exemples précis et proposez d’en discuter pour améliorer le projet.</label></li>
+                    <li><label><input type="radio" name="q8" value="D"> Vous acceptez la critique sans rien dire, même si vous pensez qu’il se trompe.</label></li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>10. Vous devez faire face à une situation de stress intense au travail. Comment gérez-vous ?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="q10" value="A"> Vous gardez tout pour vous et essayez de tout gérer seul(e).</label></li>
+                    <li><label><input type="radio" name="q10" value="B"> Vous perdez patience et manifestez votre stress à tout le monde.</label></li>
+                    <li><label><input type="radio" name="q10" value="C"> Vous faites semblant que tout va bien, même si vous êtes stressé(e).</label></li>
+                    <li><label><input type="radio" name="q10" value="D"> Vous prenez du recul, demandez de l’aide si nécessaire et organisez votre travail pour mieux gérer.</label></li>
+                </ul>
+            </div>
+
+            <button type="button" onclick="calculateResult()">Obtenir les résultats</button>
         </form>
 
-        <div id="result" class="result"></div>
+        <div id="result"></div>
     </div>
 
     <script>
         function calculateResult() {
-            const form = document.getElementById("quiz-form");
-            const resultDiv = document.getElementById("result");
+            var totalScore = 0;
 
-            let score = { A: 0, B: 0, C: 0, D: 0 };
-            let totalQuestions = 7;
-
-            for (let i = 1; i <= totalQuestions; i++) {
-                const question = form.querySelector(`input[name="q${i}"]:checked`);
-                if (question) {
-                    score[question.value]++;
+            // Calculer les points en fonction des réponses sélectionnées
+            for (var i = 1; i <= 10; i++) {
+                var answer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answer) {
+                    switch (answer.value) {
+                        case "A":
+                            totalScore += 1;
+                            break;
+                        case "B":
+                            totalScore += 2;
+                            break;
+                        case "C":
+                            totalScore += 3;
+                            break;
+                        case "D":
+                            totalScore += 4;
+                            break;
+                    }
                 }
             }
 
-            let profile = '';
-            if (score.A > score.B && score.A > score.C && score.A > score.D) {
-                profile = 'Vous avez un style de communication majoritairement passif.';
-            } else if (score.B > score.A && score.B > score.C && score.B > score.D) {
-                profile = 'Vous avez un style de communication majoritairement agressif.';
-            } else if (score.C > score.A && score.C > score.B && score.C > score.D) {
-                profile = 'Vous avez un style de communication majoritairement manipulateur.';
+            // Générer la synthèse finale
+            var resultText = "";
+            if (totalScore <= 20) {
+                resultText = "Vous avez une communication majoritairement agressive. Essayez de modérer vos réactions et d'exprimer vos idées de manière plus calme.";
+            } else if (totalScore <= 30) {
+                resultText = "Votre communication est parfois agressive. Vous pourriez améliorer l'écoute et la patience pour une meilleure compréhension.";
+            } else if (totalScore <= 40) {
+                resultText = "Votre communication est équilibrée, mais vous avez encore quelques moments où vous pourriez être plus assertif.";
             } else {
-                profile = 'Vous avez un style de communication majoritairement assertif.';
+                resultText = "Votre communication est assertive et constructive. Vous avez un excellent contrôle sur vos échanges et vous savez écouter.";
             }
 
-            resultDiv.textContent = profile;
+            // Afficher le résultat
+            var resultDiv = document.getElementById('result');
+            resultDiv.textContent = resultText;
             resultDiv.style.display = 'block';
         }
     </script>
