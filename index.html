@@ -30,6 +30,13 @@
             color: #333;
         }
 
+        .instructions {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
         .question {
             margin-bottom: 25px;
             padding: 15px;
@@ -107,7 +114,14 @@
 <body>
     <div class="quiz-container">
         <h1>Quiz sur le style de communication</h1>
+
+        <div class="instructions">
+            <p>Répondez aux questions ci-dessous en sélectionnant la réponse qui vous semble la plus appropriée.</p>
+            <p>À la fin du quiz, vous recevrez une analyse de votre style de communication.</p>
+        </div>
+
         <form id="quiz-form">
+            <!-- Question 1 -->
             <div class="question">
                 <p>1. Lors d'une réunion, vous êtes interrompu par un collègue qui parle trop. Que faites-vous ?</p>
                 <ul class="answers">
@@ -118,36 +132,51 @@
                 </ul>
             </div>
 
+            <!-- Question 2 -->
             <div class="question">
-                <p>3. Un de vos subordonnés fait une erreur. Comment réagissez-vous ?</p>
+                <p>2. Un de vos subordonnés fait une erreur. Comment réagissez-vous ?</p>
                 <ul class="answers">
-                    <li><label><input type="radio" name="q3" value="A"> Vous lui faites savoir clairement qu’il a fait une erreur et que c’est inacceptable.</label></li>
-                    <li><label><input type="radio" name="q3" value="B"> Vous ne dites rien pour ne pas le gêner, et vous réparez l'erreur discrètement.</label></li>
-                    <li><label><input type="radio" name="q3" value="C"> Vous lui suggérez gentiment qu'il aurait pu éviter l'erreur, sans lui dire directement.</label></li>
-                    <li><label><input type="radio" name="q3" value="D"> Vous lui expliquez l’erreur de manière constructive et cherchez à l’aider à éviter de la répéter.</label></li>
+                    <li><label><input type="radio" name="q2" value="A"> Vous lui faites savoir clairement qu’il a fait une erreur et que c’est inacceptable.</label></li>
+                    <li><label><input type="radio" name="q2" value="B"> Vous ne dites rien pour ne pas le gêner, et vous réparez l'erreur discrètement.</label></li>
+                    <li><label><input type="radio" name="q2" value="C"> Vous lui suggérez gentiment qu'il aurait pu éviter l'erreur, sans lui dire directement.</label></li>
+                    <li><label><input type="radio" name="q2" value="D"> Vous lui expliquez l’erreur de manière constructive et cherchez à l’aider à éviter de la répéter.</label></li>
                 </ul>
             </div>
 
+            <!-- Question 3 -->
             <div class="question">
-                <p>4. Un projet que vous avez proposé est rejeté par votre équipe. Que faites-vous ?</p>
+                <p>3. Un projet que vous avez proposé est rejeté par votre équipe. Que faites-vous ?</p>
                 <ul class="answers">
-                    <li><label><input type="radio" name="q4" value="A"> Vous vous sentez mal mais tentez de convaincre les autres de revenir sur leur décision.</label></li>
-                    <li><label><input type="radio" name="q4" value="B"> Vous ne dites rien et laissez tomber l’idée.</label></li>
-                    <li><label><input type="radio" name="q4" value="C"> Vous vous fâchez et faites savoir que vous êtes déçu(e).</label></li>
-                    <li><label><input type="radio" name="q4" value="D"> Vous demandez des retours constructifs pour comprendre les raisons et adapter votre projet.</label></li>
+                    <li><label><input type="radio" name="q3" value="A"> Vous vous sentez mal mais tentez de convaincre les autres de revenir sur leur décision.</label></li>
+                    <li><label><input type="radio" name="q3" value="B"> Vous ne dites rien et laissez tomber l’idée.</label></li>
+                    <li><label><input type="radio" name="q3" value="C"> Vous vous fâchez et faites savoir que vous êtes déçu(e).</label></li>
+                    <li><label><input type="radio" name="q3" value="D"> Vous demandez des retours constructifs pour comprendre les raisons et adapter votre projet.</label></li>
                 </ul>
             </div>
 
+            <!-- Question 4 -->
             <div class="question">
-                <p>5. Lorsqu’un collègue fait une remarque sur votre travail :</p>
+                <p>4. Lorsqu’un collègue fait une remarque sur votre travail :</p>
                 <ul class="answers">
-                    <li><label><input type="radio" name="q5" value="A"> Vous écoutez sans répondre, même si vous n’êtes pas d’accord.</label></li>
-                    <li><label><input type="radio" name="q5" value="B"> Vous défendez immédiatement votre travail en argumentant de manière ferme.</label></li>
-                    <li><label><input type="radio" name="q5" value="C"> Vous faites semblant de comprendre et d’être d’accord, même si vous êtes contrariés.</label></li>
-                    <li><label><input type="radio" name="q5" value="D"> Vous écoutez attentivement, demandez des précisions et cherchez à vous améliorer.</label></li>
+                    <li><label><input type="radio" name="q4" value="A"> Vous réagissez émotionnellement et faites comprendre que la critique vous affecte.</label></li>
+                    <li><label><input type="radio" name="q4" value="B"> Vous répondez en expliquant pourquoi vous avez fait ce choix, parfois de manière défensive.</label></li>
+                    <li><label><input type="radio" name="q4" value="C"> Vous remerciez pour la critique, demandez des exemples précis et proposez d’en discuter pour améliorer le projet.</label></li>
+                    <li><label><input type="radio" name="q4" value="D"> Vous acceptez la critique sans rien dire, même si vous pensez qu’il se trompe.</label></li>
                 </ul>
             </div>
 
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Vous devez faire face à une situation de stress intense au travail. Comment gérez-vous ?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="q5" value="A"> Vous gardez tout pour vous et essayez de tout gérer seul(e).</label></li>
+                    <li><label><input type="radio" name="q5" value="B"> Vous perdez patience et manifestez votre stress à tout le monde.</label></li>
+                    <li><label><input type="radio" name="q5" value="C"> Vous faites semblant que tout va bien, même si vous êtes stressé(e).</label></li>
+                    <li><label><input type="radio" name="q5" value="D"> Vous prenez du recul, demandez de l’aide si nécessaire et organisez votre travail pour mieux gérer.</label></li>
+                </ul>
+            </div>
+
+            <!-- Question 6 -->
             <div class="question">
                 <p>6. Votre supérieur vous confie une tâche que vous ne pouvez pas accomplir dans les délais :</p>
                 <ul class="answers">
@@ -158,6 +187,7 @@
                 </ul>
             </div>
 
+            <!-- Question 7 -->
             <div class="question">
                 <p>7. Un collaborateur prend le crédit pour un travail que vous avez fait. Comment réagissez-vous ?</p>
                 <ul class="answers">
@@ -168,6 +198,7 @@
                 </ul>
             </div>
 
+            <!-- Question 8 -->
             <div class="question">
                 <p>8. Un collègue vous fait une critique sur un projet :</p>
                 <ul class="answers">
@@ -178,6 +209,18 @@
                 </ul>
             </div>
 
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Vous devez faire face à un client mécontent :</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="q9" value="A"> Vous vous excusez immédiatement et acceptez toute la responsabilité.</label></li>
+                    <li><label><input type="radio" name="q9" value="B"> Vous expliquez pourquoi la situation est arrivée, sans forcément présenter des excuses.</label></li>
+                    <li><label><input type="radio" name="q9" value="C"> Vous écoutez le client et proposez une solution rapidement pour satisfaire ses attentes.</label></li>
+                    <li><label><input type="radio" name="q9" value="D"> Vous essayez de discuter calmement pour trouver une solution, en prenant en compte les besoins du client.</label></li>
+                </ul>
+            </div>
+
+            <!-- Question 10 -->
             <div class="question">
                 <p>10. Vous devez faire face à une situation de stress intense au travail. Comment gérez-vous ?</p>
                 <ul class="answers">
